@@ -1,0 +1,218 @@
+{
+  "vim.leader": "<Space>",
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.foldfix": true,
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // NAVIGATION
+    // switch b/w buffers
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // splits
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // panes
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+    // NICE TO HAVE
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "x"], "commands": [":x!"] },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    { "before": ["leader", "f"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+    // toggle comment selection
+    { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "zenMode.hideLineNumbers": false,
+  "editor.linkedEditing": true,
+  "projectManager.git.baseFolders": ["$home/git", "$home/work"],
+  "projectManager.sortList": "Recent",
+  "editor.suggest.insertMode": "replace",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  // "editor.codeActionsOnSave": {
+  //   "source.AddMissingImports": true,
+  //   "source.organizeImports": true
+  // },
+  "extensions.ignoreRecommendations": true,
+  "svelte.enable-ts-plugin": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "explorer.confirmDragAndDrop": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontFamily": "CaskaydiaCove Nerd Font",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "mdx.experimentalLanguageServer": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ],
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "markdown": true
+  },
+  "security.workspace.trust.enabled": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.sendKeybindingsToShell": true,
+  "editor.matchBrackets": "never",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.fontLigatures": true,
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.inlineSuggest.enabled": true,
+  "explorer.confirmDelete": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "emmet.includeLanguages": {
+    "rust": "html"
+  },
+  "editor.accessibilitySupport": "off",
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.startupEditor": "none",
+  "go.toolsManagement.autoUpdate": true,
+  "redhat.telemetry.enabled": true,
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "diffEditor.renderSideBySide": false,
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night Storm]": {
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.stickyScroll.enabled": true,
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "githubPullRequests.pullBranch": "never",
+  "githubPullRequests.fileListLayout": "flat",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.openRepositoryInParentFolders": "never",
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.cursorSurroundingLines": 8,
+  "editor.lineNumbers": "relative",
+  "git.confirmSync": false,
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.renderControlCharacters": false,
+  "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Tokyo Night Storm"
+}

@@ -1,0 +1,59 @@
+// Place your key bindings in this file to override the defaults
+[
+  // CONMMAND PALETTE
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  // PROJECT MANAGER
+  {
+    "key": "cmd+o",
+    "command": "projectManager.listGitProjects#sideBarGit"
+  },
+  // FILE TREE
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+a",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+
+  // EXTRA
+  {
+    "key": "ctrl+shift+5",
+    "command": "editor.emmet.action.matchTag"
+  },
+  {
+    "key": "ctrl+z",
+    "command": "workbench.action.toggleZenMode"
+  }
+]
