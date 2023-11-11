@@ -209,10 +209,11 @@
   "[toml]": {
     "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "workbench.activityBar.visible": false,
   "breadcrumbs.enabled": false,
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
   "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Tokyo Night Storm"
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "excalidraw.theme": "auto",
+  "workbench.activityBar.location": "hidden"
 }
