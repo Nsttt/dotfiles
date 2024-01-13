@@ -75,10 +75,6 @@
   "editor.suggest.insertMode": "replace",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "extensions.autoUpdate": "onlyEnabledExtensions",
-  // "editor.codeActionsOnSave": {
-  //   "source.AddMissingImports": true,
-  //   "source.organizeImports": true
-  // },
   "extensions.ignoreRecommendations": true,
   "svelte.enable-ts-plugin": true,
   "prettier.documentSelectors": ["**/*.astro"],
@@ -86,7 +82,11 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.fontFamily": "CaskaydiaCove Nerd Font",
+  "editor.fontFamily": "'CaskaydiaCove Nerd Font', Consolas, 'Courier New', monospace",
+  "apc.font.family": "'CaskaydiaCove Nerd Font'",
+  "editor.lineHeight": 1.42857, // makes font size 14 have line height of ~20px
+  "editor.cursorBlinking": "smooth", // smol cursor animation, looks nice
+  "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -108,13 +108,22 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "mdx.experimentalLanguageServer": true,
+  "eslint.options": {
+    "extensions": [".js", ".jsx", ".mdx", ".ts", ".tsx"]
+  },
   "eslint.validate": [
+    "mdx",
     "javascript",
     "javascriptreact",
     "astro", // Enable .astro
     "typescript", // Enable .ts
     "typescriptreact" // Enable .tsx
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    // enables tailwind autocomplete for specified functions
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cn\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    ["cx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "github.copilot.enable": {
     "*": true,
@@ -126,12 +135,13 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "terminal.integrated.sendKeybindingsToShell": true,
-  "editor.matchBrackets": "never",
+  "editor.matchBrackets": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.minimap.enabled": false,
   "editor.fontLigatures": true,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "chalice-icon-theme",
   "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "explorer.confirmDelete": false,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -151,10 +161,42 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "diffEditor.renderSideBySide": false,
   "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      // remove peppermint flavor
+      {
+        "name": "String, Symbols, Inherited Class",
+        "scope": [
+          "string",
+          "constant.other.symbol",
+          "constant.other.key",
+          "meta.group.braces.curly constant.other.object.key.js string.unquoted.label.js"
+        ],
+        "settings": {
+          "foreground": "#A0A0A0"
+        }
+      },
+      {
+        "name": "CSS ID's",
+        "scope": [
+          "source.sass keyword.control",
+          "meta.attribute-selector.scss"
+        ],
+        "settings": {
+          "foreground": "#ffffff"
+        }
+      },
+      {
+        "name": "Inserted",
+        "scope": ["markup.inserted"],
+        "settings": {
+          "foreground": "#ffffff"
+        }
+      }
+    ],
     "[Tokyo Night Storm]": {
       "textMateRules": [
         {
@@ -176,6 +218,11 @@
       ]
     }
   },
+  "workbench.colorCustomizations": {
+    "editorGutter.addedBackground": "#A0A0A0",
+    "editorGutter.deletedBackground": "#A0A0A0",
+    "editorGutter.modifiedBackground": "#A0A0A0"
+  },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "editor.stickyScroll.enabled": true,
   "[markdown]": {
@@ -195,7 +242,7 @@
   "git.openRepositoryInParentFolders": "never",
   "[python]": {
     "editor.formatOnType": true,
-    "editor.defaultFormatter": "ms-python.python"
+    "editor.defaultFormatter": "ms-python.black-formatter"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -213,7 +260,23 @@
   "editor.renderWhitespace": "none",
   "editor.renderControlCharacters": false,
   "window.titleBarStyle": "custom",
-  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.colorTheme": "Vesper",
   "excalidraw.theme": "auto",
-  "workbench.activityBar.location": "hidden"
+  "workbench.activityBar.location": "hidden",
+  "[mdx]": {
+    "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+  },
+  "window.commandCenter": false, // hides command center at the top of the window. Use cmd+shift+p instead
+  "workbench.layoutControl.enabled": false, // hides those little squares on the top right of the window
+  "workbench.editor.editorActionsLocation": "hidden", // hides the "format" and ellipsis buttons on the top right of the window
+  "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
+  "editor.hideCursorInOverviewRuler": true, // don't highlight current line in scrollbar
+  "editor.minimap.autohide": true, // shows minimap only on hover
+  "workbench.statusBar.visible": true, // Bottom bar settings
+  "gitlens.mode.active": "zen", // toggle with command paletteA, zen mode hides gitlens stuff for when you don't need it
+  "gitlens.hovers.currentLine.over": "line",
+  "chaliceIcons.showArrows": true,
+  "importCost.largePackageDarkColor": "#8B8B8B94",
+  "importCost.mediumPackageDarkColor": "#8B8B8B94",
+  "importCost.smallPackageDarkColor": "#8B8B8B94"
 }
